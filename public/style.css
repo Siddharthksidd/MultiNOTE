@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #2B3499;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header span{
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    background-color: #FF6C22;
+    border-radius: 0.2rem;
+}
+
+header h1{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+footer{
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 2rem;
+    width: 100%;
+}
+
+footer p {
+    color: #ccc;
+}
+
+form{
+    position: relative;
+    width: 40%; 
+    margin: 3% auto 1% auto;
+    background: #FFF;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgba(43, 52, 153, 0.879);
+}
+
+form input, form textarea{
+    width: 100%;
+
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    font-size: larger;
+    padding: 4px;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow:hidden;
+    background: #FFF;
+}
+
+form button{
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #FF6C22;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.noteCard {
+    position: relative;
+    background: #2B3499;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 298px;
+    margin: 16px;
+    float: left;
+    color: white;
+    font-family: 'Hedvig Letters Sans', sans-serif;
+  }
+  .noteCard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+  .noteCard p {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+.noteCard button{
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #FF6C22;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+.deleteButton:hover{
+    background-color: #ff0000;
+}
+
+.addButton:hover{
+    background-color: green;
+}
+/* 
+.themeButton{
+    position: absolute;
+    right: 64px;
+    bottom: -18px;
+    background: #FF6C22;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.themeButton:hover{
+    background-color: green;
+}
+
+.theme{
+    position: absolute;
+    right: 260px;
+    width: 480px; 
+    margin: 0.5% auto 0.5% auto;
+    background: #FFF;
+    padding: 5px;    
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgba(43, 52, 153, 0.879);
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.themeColor{
+    position: relative;
+    width: 56px;
+    height: 56px;
+    background-color: none;
+    margin: 2px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.red{
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+}
+.lightblue{
+    background-color: lightblue;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.pink{
+    background-color: pink;
+}
+
+.themeColor:hover{
+    width: 54px;
+    height: 54px;
+    outline: none;
+    cursor: pointer;
+    margin: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+} */
+
