@@ -1,30 +1,38 @@
-// import React from 'react';
-// import FormatColorResetIcon from '@mui/icons-material/FormatColorReset';
-// import Zoom from '@mui/material/Zoom';
-// import Fab from '@mui/material/Fab';
+import React from 'react';
+import FormatColorResetIcon from '@mui/icons-material/FormatColorReset';
+import Zoom from '@mui/material/Zoom';
+import Fab from '@mui/material/Fab';
 
-// function ThemePallet(props) {
+function ThemePallet(props) {
 
-//   const [tmeColor, setColor] = React.useState("#FFF")
+    //passing the clicked color to parent
+    function colorHandler(e){
+        props.colorHandler(e.target.id)
+    }
 
-//   function colorHandler(event){
-//     const colortme = event.target.id;
-//     setColor(colortme);
-//     props.changeColor(tmeColor);
-//   };
+     //passing the clicked text color to parent
+    function txtHandler(e){
+        props.txtHandler(e.target.id)
+    }
 
-//   return (
-//     <div class="theme">
-//         <Zoom in="true"><Fab onClick={colorHandler} id="transparent" class="themeColor transparant" ><FormatColorResetIcon onClick={colorHandler} id="transperent"/></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} id="red" class="themeColor red" ></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} class="themeColor orange" id="orange"></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} class="themeColor lightblue" id="lightblue"></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} class="themeColor blue" id="blue"></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} class="themeColor yellow" id="yellow"></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} class="themeColor green" id="green"></Fab></Zoom>
-//         <Zoom in="true"><Fab onClick={colorHandler} class="themeColor pink" id="pink"></Fab></Zoom>
-//     </div>
-//     );
-// };  
+    return (
+        <div class="theme">
+                <div class="themecontainer">
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="transparent"><FormatColorResetIcon onClick={colorHandler} id="transperent"/></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="red"></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="orange"></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="lightblue"></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="blue"></Fab></Zoom>
+                </div>
+                <div class="themecontainer">
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="yellow"></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="green"></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={colorHandler} class="themeColor" id="pink"></Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={txtHandler} class="themeColor themetext-black" id="black">T</Fab></Zoom>
+                    <Zoom in="true"><Fab tabIndex = "-1" onClick={txtHandler} class="themeColor themetext-white" id="white">T</Fab></Zoom>
+                </div>
+        </div>
+        );
+};  
 
-// export default ThemePallet
+export default ThemePallet

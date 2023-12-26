@@ -4,8 +4,21 @@
     box-sizing: border-box;
 }
 
+#root{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    min-height: 100vh;
+    flex-grow: 1;
+}
+
 header{
-    background-color: #2B3499;
+    background-color: #223cff;
     height: 4rem;
     display: flex;
     align-items: center;
@@ -16,7 +29,7 @@ header{
 
 header span{
     font-family: 'Hedvig Letters Sans', sans-serif;
-    background-color: #FF6C22;
+    background: linear-gradient(to right, #1ba119, #1ba119 30%, #2196F3 30%, #2196F3 52.5%, #FFEB3B 52.5%, #FFEB3B 71.5%, #FF5722 71.5%, #FF5722);
     border-radius: 0.2rem;
 }
 
@@ -27,30 +40,28 @@ header h1{
 
 footer{
     font-family: sans-serif;
-    position: absolute;
-    bottom: 0;
     text-align: center;
     height: 2rem;
     width: 100%;
+    display: inline-block;
 }
 
 footer p {
     color: #ccc;
 }
 
-form{
+.inputForm{
     position: relative;
     width: 40%; 
-    margin: 3% auto 1% auto;
+    margin: 3% auto 20px auto;
     background: #FFF;
     padding: 15px;
     border-radius: 7px;
     box-shadow: 0 1px 5px rgba(43, 52, 153, 0.879);
 }
 
-form input, form textarea{
+.inputForm input, .inputForm textarea{
     width: 100%;
-
     font-family: 'Hedvig Letters Sans', sans-serif;
     font-size: larger;
     padding: 4px;
@@ -58,14 +69,14 @@ form input, form textarea{
     outline: none;
     resize: none;
     overflow:hidden;
-    background: #FFF;
+    background: transparent;
 }
 
-form button{
+.addButton{
     position: absolute;
     right: 18px;
     bottom: -18px;
-    background: #FF6C22;
+    background: #223cff;
     color: #fff;
     border-radius: 50%;
     border: none;
@@ -78,32 +89,61 @@ form button{
 
 .noteCard {
     position: relative;
-    background: #2B3499;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    width: 298px;
+    /* max-width: 20%; */
+    min-width: 240px;
     margin: 16px;
     float: left;
-    color: white;
     font-family: 'Hedvig Letters Sans', sans-serif;
-  }
-  .noteCard h2 {
+    /* z-index: -1; */
+    justify-items: center;
+}
+.noteCard h2 {
     font-size: 1.5rem;
     margin-bottom: 6px;
-  }
-  .noteCard p {
+}
+.noteCard p {
     font-size: 1.25rem;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
 
-.noteCard button{
+.noteForm{
+    position: relative;
+    width: 100%;
+}
+
+.noteForm input, .noteForm textarea{
+    width: 100%;
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow:hidden;
+    background: transparent;
+}
+
+.editNoteTitle {
+    font-size: 1.5em;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+.editNoteContent {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+.notecardDBtn button{
     position: absolute;
     right: 18px;
     bottom: -18px;
-    background: #FF6C22;
+    background-color: #f46118;
     color: #fff;
     border-radius: 50%;
     border: none;
@@ -114,21 +154,47 @@ form button{
     cursor: pointer;
 }
 
-
-.deleteButton:hover{
+.notecardDBtn button:hover{
     background-color: #ff0000;
 }
 
-.addButton:hover{
-    background-color: green;
+.notecardEBtn button{
+    position: absolute;
+    right: 64px;
+    bottom: -18px;
+    background-color: #1ba119;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
-/* 
+
+.notecardEBtn button:hover{
+    background-color: #223cff;
+    color: white;
+}
+
+.addButton:hover:active{
+    background-color: rgb(4, 1, 207);
+    padding-top: 4px;
+}
+
+.themeButton:hover:active{
+    background: linear-gradient(to left, #1ba119, #1ba119 25%, #2196F3 25%, #2196F3 50%, #FFEB3B 50%, #FFEB3B 75%, #FF5722 75%, #FF5722);;
+    padding-top: 4px;
+}
+
+
 .themeButton{
     position: absolute;
     right: 64px;
     bottom: -18px;
-    background: #FF6C22;
-    color: #fff;
+    background: linear-gradient(to right, #1ba119, #1ba119 25%, #2196F3 25%, #2196F3 50%, #FFEB3B 50%, #FFEB3B 75%, #FF5722 75%, #FF5722);
+    color: darkslategray;
     border-radius: 50%;
     border: none;
     outline: none;
@@ -143,58 +209,119 @@ form button{
 }
 
 .theme{
-    position: absolute;
-    right: 260px;
-    width: 480px; 
-    margin: 0.5% auto 0.5% auto;
+    /* position: relative; */
+    /* left: 260px; */
+    width: 100%; 
+    margin: 0.5% 0.5% 0.5% 0.5%;
     background: #FFF;
     padding: 5px;    
     border-radius: 7px;
     box-shadow: 0 1px 5px rgba(43, 52, 153, 0.879);
     display: flex;
-    justify-content: space-around;
-    z-index: 1;
+    align-items: center;
 }
 
 .themeColor{
     position: relative;
-    width: 56px;
-    height: 56px;
-    background-color: none;
+    width: 46px;
+    height: 46px;
     margin: 2px;
-    border-radius: 50%;
+    border-radius: 38%;
     border: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-.red{
+#red{
     background-color: red;
 }
-.orange{
+#orange{
     background-color: orange;
 }
-.lightblue{
+#lightblue{
     background-color: lightblue;
 }
-.blue{
+#blue{
     background-color: blue;
 }
-.yellow{
+#yellow{
     background-color: yellow;
 }
-.green{
+#green{
     background-color: green;
 }
-.pink{
+#pink{
     background-color: pink;
 }
 
 .themeColor:hover{
-    width: 54px;
-    height: 54px;
+    width: 42px;
+    height: 42px;
     outline: none;
     cursor: pointer;
-    margin: 3px;
+    margin: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-} */
+}
 
+.themetext-black{
+    background-color: white;
+    color: black;
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    font-size: larger;
+}
+
+.themetext-white{
+    background-color: black;
+    color: white;
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    font-size: larger;
+}
+
+.dispayNote{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.createNoteArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.themecontainer{
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+}
+
+.themeInput{
+    margin: auto;
+}
+
+@media screen and (max-width: 750px){
+    .inputForm {
+        width: 98%;}
+
+    .noteCard {
+        min-width: 98%;
+        margin: 12px;
+    }
+
+    .theme{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 270px;
+    }
+
+
+}
+
+@media screen and (max-width: 1050px){
+    .inputForm {
+        width: 75%;}
+}
