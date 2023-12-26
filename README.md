@@ -45,7 +45,7 @@ I have created a simple Note taking webpage using React.
 
 ### Links
 
-- Live Site URL: [https://multinote-681de.firebaseapp.com/]
+- Live Site URL: [https://multinote-54a4d.web.app/]
 
 ## My process
 
